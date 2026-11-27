@@ -1,0 +1,6 @@
+/target/
+/target-linux/
+
+# 本机工具元数据目录，不属于项目源码
+/.codeartsdoer/
+/.security/

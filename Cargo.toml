@@ -1,0 +1,21 @@
+[package]
+name = "netprobe"
+version = "0.1.0"
+edition = "2021"
+description = "Lightweight TCP/UDP bidirectional connectivity probe (server + client)"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"]}
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[[bin]]
+name = "netprobe-server"
+path = "src/bin/netprobe-server.rs"
+
+[[bin]]
+name = "netprobe-client"
+path = "src/bin/netprobe-client.rs"
