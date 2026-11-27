@@ -76,13 +76,17 @@ git push origin v0.1.0
 |---|---|---|
 | `netprobe-linux-amd64.tar.gz` | x86_64 | 静态 musl 编译，含 `netprobe-server` + `netprobe-client` |
 | `netprobe-linux-arm64.tar.gz` | aarch64 | 静态 musl 编译，含 `netprobe-server` + `netprobe-client` |
-| `*.sha256` / `SHA256SUMS` | — | 校验文件 |
+| `netprobe-macos-amd64.tar.gz` | x86_64 (Intel) | 含 `netprobe-server` + `netprobe-client` |
+| `netprobe-macos-arm64.tar.gz` | aarch64 (Apple Silicon) | 含 `netprobe-server` + `netprobe-client` |
+| `netprobe-windows-amd64.zip` | x86_64 | 含 `.exe`（CRT 静态链接，无需 VC++ Redistributable） |
+| `SHA256SUMS` | — | 全部产物校验文件 |
 
 解压即可使用（无需安装任何运行时依赖）：
 
 ```bash
-tar -xzf netprobe-linux-amd64.tar.gz
-sha256sum -c SHA256SUMS   # 校验完整性（可选）
+tar -xzf netprobe-linux-amd64.tar.gz        # linux / macos
+sha256sum -c SHA256SUMS                      # 校验完整性（可选）
+# windows: 解压 netprobe-windows-amd64.zip 后运行 .\netprobe-server.exe
 ```
 
 ## 4. 运行
